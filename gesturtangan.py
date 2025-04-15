@@ -8,8 +8,8 @@ mp_draw = mp.solutions.drawing_utils
 
 while True:
     ret, frame = cap.read()
-    frame = cv2.flip(frame,1)
-    
+    frame = cv2.flip(frame, 1)
+
     img_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     result = hands.process(img_rgb)
 
@@ -18,7 +18,7 @@ while True:
             mp_draw.draw_landmarks(frame, hand_landmark, mp_hands.HAND_CONNECTIONS)
 
     cv2.imshow("Hand Tracking", frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) & 0xFF == ord("q"):
         break
 
 cap.release()
